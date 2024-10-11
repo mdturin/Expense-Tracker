@@ -25,9 +25,11 @@ public class ConfigurationService
             return;
         }
 
-        string jsonString = File.ReadAllText("C:\\AppStore\\appconfig.json");
-        _values = JsonSerializer
-            .Deserialize<Dictionary<string, string>>(jsonString);
+        var jsonString = File.ReadAllText("C:\\AppStore\\appconfig.json");
+        _values = JsonSerializer.Deserialize<Dictionary<string, string>>(jsonString, new JsonSerializerOptions()
+        {
+            AllowTrailingCommas = true,
+        });
     }
 
     public bool Contains(string key) => _values.ContainsKey(key);
