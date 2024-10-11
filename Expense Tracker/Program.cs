@@ -1,4 +1,5 @@
 ﻿using Expense_Tracker.Interfaces;
+using Expense_Tracker.Services;
 using System.CommandLine;
 using System.Reflection;
 
@@ -22,4 +23,7 @@ static void LoadAllCommands(Command rootCommand)
             if (command != null)
                 rootCommand.Add(command);
         });
+
+    var expenses = StoreService.Instance.ReadAll();
+    ExpenseManager.Instance.LoadAllExpenses(expenses);
 }
