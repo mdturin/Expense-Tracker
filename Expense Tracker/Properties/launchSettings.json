@@ -2,7 +2,7 @@
   "profiles": {
     "Expense Tracker": {
       "commandName": "Project",
-      "commandLineArgs": "list"
+      "commandLineArgs": "summary --month 10"
     }
   }
 }

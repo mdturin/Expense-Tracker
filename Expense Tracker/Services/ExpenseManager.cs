@@ -57,4 +57,8 @@ public class ExpenseManager
     }
 
     public double Summary() => _expenses.Sum(e => e.Amount);
+
+    public double Summary(int month) => _expenses
+        .Where(e => e.Date.Month == month)
+        .Sum(e => e.Amount);
 }
