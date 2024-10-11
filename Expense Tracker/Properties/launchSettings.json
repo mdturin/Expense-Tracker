@@ -1,8 +1,8 @@
 {
-  "profiles": {
-    "Expense Tracker": {
-      "commandName": "Project",
-      "commandLineArgs": "delete --id 1"
+    "profiles": {
+        "Expense Tracker": {
+            "commandName": "Project",
+            "commandLineArgs": ""
+        }
     }
-  }
 }
