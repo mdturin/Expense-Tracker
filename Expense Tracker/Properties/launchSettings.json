@@ -2,7 +2,7 @@
     "profiles": {
         "Expense Tracker": {
             "commandName": "Project",
-            "commandLineArgs": "expense-tracker export type csv"
+            "commandLineArgs": "expense-tracker export type xlsx"
         }
     }
 }

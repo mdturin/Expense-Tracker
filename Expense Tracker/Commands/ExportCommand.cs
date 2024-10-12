@@ -8,7 +8,7 @@ public class ExportCommand : IArgsCommand
 {
     public Command Execute()
     {
-        var typeOption = new Option<string>(["--type", "type"], () => "json", "Export Type: 'JSON', 'XLSL', 'CSV'") { IsRequired = false };
+        var typeOption = new Option<string>(["--type", "type"], () => "json", "Export Type: 'JSON', 'XLSX', 'CSV'") { IsRequired = false };
         var nameOption = new Option<string>(["--name", "name"], () => "expenses", "Export file name") { IsRequired = false };
 
         var exportCommand = new Command("export", "Export expense tracker")
@@ -33,7 +33,7 @@ public class ExportCommand : IArgsCommand
         {
             "json" => new JsonExporter(),
             "csv" => new CsvExporter(),
-            "excel" => new ExcelExporter(),
+            "xlsx" => new ExcelExporter(),
             _ => throw new NotImplementedException()
         };
     }
