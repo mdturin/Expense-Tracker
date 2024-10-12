@@ -62,4 +62,15 @@ public class StoreService
         var jsonString = JsonSerializer.Serialize(expenses, options);
         File.WriteAllText(_filePath, jsonString);
     }
+
+    public static void Write(List<Expense> expenses, string path)
+    {
+        JsonSerializerOptions options = new()
+        {
+            WriteIndented = true
+        };
+
+        var jsonString = JsonSerializer.Serialize(expenses, options);
+        File.WriteAllText(path, jsonString);
+    }
 }

@@ -1,13 +1,13 @@
-﻿using Expense_Tracker.Interfaces;
+﻿using Expense_Tracker.Abstractions;
 using Expense_Tracker.Services;
 
 namespace Expense_Tracker.Exporter;
 
-public class JsonExporter : IExporter
+public class JsonExporter : AExporter
 {
-    public void Export(string fileName)
+    public override void DoExport(string filePath)
     {
         var expenses = ExpenseManager.Instance.GetAll();
-
+        StoreService.Write(expenses, filePath);
     }
 }
