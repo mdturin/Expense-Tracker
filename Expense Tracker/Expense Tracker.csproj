@@ -6,6 +6,7 @@
 		<RootNamespace>Expense_Tracker</RootNamespace>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<AssemblyName>expense-tracker</AssemblyName>
+		<Version>24-10-12-01</Version>
 	</PropertyGroup>
 
 	<ItemGroup>
