@@ -34,6 +34,16 @@ public class ExpenseManager
         return _expenses.Last();
     }
 
+    public bool UpdateExpense(int id, string description, double amount)
+    {
+        var expense = GetExpense(id);
+        if (expense == null) return false;
+
+        expense.Description = description;
+        expense.Amount = amount;
+        return true;
+    }
+
     public void SaveAll() => StoreService.Instance.Write(_expenses);
 
     public Expense GetExpense(int id)
